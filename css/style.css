@@ -11,6 +11,8 @@ margin: 0;
 background: #fff;
 letter-spacing: 1px;
 font-family:  'Arimo', sans-serif;
+width: 100%;
+height: 100%;
 }
 body a {
 outline: none;
@@ -1271,3 +1273,160 @@ font-size: 13px;
 .imgCriadores{
   padding-top: 20px !important;
 }
+
+/** ----------------------------------------CSS DO RANKING----------------------------- **/
+
+
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/*--------------------
+Leaderboard
+--------------------*/
+.sectionRank{
+    margin: 0;
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    background: radial-gradient(ellipse farthest-corner at center top, #4dc197 0%, #60b965 100%);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 300px !important;
+    padding-bottom: 550px !important;
+}
+
+.leaderboard {
+    display: inline;
+    position: center;
+    width: 885px;
+    height: 308px;
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+    border-radius: 10px;
+    box-shadow: 0 7px 30px rgba(62, 9, 11, 0.3);
+}
+.leaderboard h1 {
+    font-size: 18px;
+    color: #e1e1e1;
+    padding: 12px 13px 18px;
+}
+.leaderboard h1 svg {
+    width: 25px;
+    height: 26px;
+    position: relative;
+    top: 3px;
+    margin-right: 6px;
+    vertical-align: baseline;
+}
+.leaderboard ol {
+    counter-reset: leaderboard;
+}
+.leaderboard ol li {
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+    counter-increment: leaderboard;
+    padding: 18px 10px 18px 50px;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0) scale(1, 1);
+    transform: translateZ(0) scale(1, 1);
+}
+.leaderboard ol li::before {
+    content: counter(leaderboard);
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    color: #42c24b;
+    background: #fff;
+    border-radius: 20px;
+    text-align: center;
+}
+.leaderboard ol li span {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 18px 10px 18px 50px;
+    margin: 0;
+    background: none;
+    color: #fff;
+}
+.leaderboard ol li span::before, .leaderboard ol li span::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    bottom: -11px;
+    left: -9px;
+    border-top: 10px solid #488c44;
+    border-left: 10px solid transparent;
+    transition: all 0.1s ease-in-out;
+    opacity: 0;
+}
+.leaderboard ol li span::after {
+    left: auto;
+    right: -9px;
+    border-left: none;
+    border-right: 10px solid transparent;
+}
+
+.leaderboard ol li small {
+    position: relative;
+    z-index: 2;
+    display: block;
+    text-align: right;
+}
+
+.leaderboard ol li::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #90fa7a;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+.leaderboard ol li {
+    background: #68cb60;
+}
+.leaderboard ol li:after {
+    background: #5db658;
+}
+.leaderboard ol li:hover {
+    z-index: 2;
+    overflow: visible;
+}
+.leaderboard ol li:hover::after {
+    opacity: 1;
+    -webkit-transform: scaleX(1.06) scaleY(1.03);
+    transform: scaleX(1.06) scaleY(1.03);
+}
+.leaderboard ol li:hover span::before, .leaderboard ol li:hover span::after {
+    opacity: 1;
+    transition: all 0.35s ease-in-out;
+}
+
+ol{
+    -webkit-padding-start: 0px !important;
+}
+
+
